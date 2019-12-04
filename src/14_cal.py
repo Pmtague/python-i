@@ -22,3 +22,20 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+# Create a calendar
+
+# c = calendar.TextCalendar(calendar.SUNDAY)
+# str = c.formatmonth(2019, 11)
+# print(str)
+
+# Set the default to the current month using datetime module
+
+def cal(year, month):
+  c = calendar.TextCalendar(calendar.SUNDAY)
+  str = c.formatmonth(year, month)
+  print(str)
+
+cal(2019, 11)
+
+# Set boundaries for arguments
