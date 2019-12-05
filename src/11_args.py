@@ -32,14 +32,13 @@ print(f2(*a))    # Should print 22
 # it returns that value plus 1. If two arguments, it returns the sum of the
 # arguments. Google "python default arguments" for a hint.
 
-def f3(num1, num2 = 0 ):
-    if arguments.len == 1:
-
+def f3(num1, num2 = 1 ):
+    return num1 + num2
 
 print(f3(1, 2))  # Should print 3
 print(f3(8))     # Should print 9
 
-sys.exit()
+
 # Write a function f4 that accepts an arbitrary number of keyword arguments and
 # prints out the keys and values like so:
 #
@@ -48,7 +47,9 @@ sys.exit()
 #
 # Google "python keyword arguments".
 
-# YOUR CODE HERE
+def f4(**kwargs):
+    for key, value in kwargs.items():
+        print(f"key: {key}, value: {value}")
 
 # Should print
 # key: a, value: 12
@@ -67,4 +68,4 @@ d = {
 }
 
 # What thing do you have to add to make this work?
-f4(d)
+f4(**d)
