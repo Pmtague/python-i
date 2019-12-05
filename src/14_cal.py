@@ -31,11 +31,11 @@ from datetime import datetime
 
 # Set the default to the current month using datetime module
 
-def cal(year, month):
+def cal(year = 2019, month = 11):
   c = calendar.TextCalendar(calendar.SUNDAY)
   str = c.formatmonth(year, month)
   print(str)
 
-cal(2019, 11)
+cal()
 
 # Set boundaries for arguments
