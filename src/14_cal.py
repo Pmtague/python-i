@@ -22,3 +22,38 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+# Create a calendar
+
+# c = calendar.TextCalendar(calendar.SUNDAY)
+# str = c.formatmonth(2019, 11)
+# print(str)
+
+# Set the default to the current month using datetime module
+
+user_input = input("Please enter 1-12 for the month and 4 digit year (ex: 11, 1978): ").replace(" ", "").split(",")
+
+def cal(*args):
+  new_cal = calendar.TextCalendar(calendar.SUNDAY)
+  month = datetime.today().month
+  year = datetime.today().year
+  day = datetime.today().day
+
+  if len(args) == 1:
+    try:
+      month_int = int(args[0])
+      date = datetime(year, month_int, day)
+      print(new_cal.prmonth(date.year, date.month))
+    except:
+      print(new_cal.prmonth(year, month))
+
+  elif len(args) == 2:
+    dates = datetime(int(args[1]), int(args[0]), day)
+    print(new_cal.prmonth(dates.year, dates.month))
+  
+  else:
+    print("Please enter a month, or month and year in the following format: XX, XXXX")
+
+cal(*user_input)
+
+# Set boundaries for arguments
